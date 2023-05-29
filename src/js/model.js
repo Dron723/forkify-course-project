@@ -1,6 +1,5 @@
 import { API_URL } from './config';
 import { RES_PER_PAGE, KEY } from './config';
-// import { getJSON, sendJSON } from './helpers';
 import { AJAX } from './helpers';
 
 export const state = {
@@ -129,7 +128,6 @@ export const uploadRecipe = async function (newRecipe) {
       .filter(entry => entry[0].startsWith('ingredient') && entry[1] !== '')
       .map(ing => {
         const ingArr = ing[1].split(',').map(el => el.trim());
-        // const ingArr = ing[1].replaceAll(' ', '').split(',');
         if (ingArr.length !== 3)
           throw new Error(
             'Wrong ingredient format! Please use the correct format :)'
